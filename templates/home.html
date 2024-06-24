@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="p-5 " style="height: 80vh; display: flex;">
+    <div class="row align-items-center" style="display: flex;justify-content: space-between;width: 100%;">
+        <div class="col-md-6 text-center">
+            <h1>URL Shortner</h1>
+            {% if request.user.is_authenticated %}
+                <h2>Welcome! {{request.user}}</h2>
+            {% else %}
+                <h2>Welcome!</h2>
+            {% endif %}
+        </div>
+        <div class="col-md-6 text-center">
+            <h2>Short your url here with <br><hr>
+                <span class="badge bg-danger rounded-pill">Zero Ads</span>
+                <Span class="badge bg-primary rounded-pill">free account</Span>
+                <Span class="badge bg-success rounded-pill">High security</Span>
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock content %}
